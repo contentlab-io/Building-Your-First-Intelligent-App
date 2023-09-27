@@ -12,8 +12,8 @@ if (builder.Environment.IsDevelopment())
 
 
     builder.Services.AddAzureClients(clientBuilder =>
-        clientBuilder.AddTextAnalyticsClient(new Uri(builder.Configuration["Cognitive_EndPoint"]),
-        new Azure.AzureKeyCredential(builder.Configuration["Cognitive_Key"]))
+        clientBuilder.AddTextAnalyticsClient(new Uri(builder.Configuration["AI_EndPoint"]),
+        new Azure.AzureKeyCredential(builder.Configuration["AI_Key"]))
         );
 }
 else
@@ -22,8 +22,8 @@ else
         options.UseSqlServer(Environment.GetEnvironmentVariable("AZURE_SQL_CONNECTIONSTRING")));
 
     builder.Services.AddAzureClients(clientBuilder =>
-        clientBuilder.AddTextAnalyticsClient(new Uri(builder.Configuration["Cognitive_EndPoint"]),
-        new Azure.AzureKeyCredential(builder.Configuration["Cognitive_Key"]))
+        clientBuilder.AddTextAnalyticsClient(new Uri(builder.Configuration["AI_EndPoint"]),
+        new Azure.AzureKeyCredential(builder.Configuration["AI_Key"]))
         );
 }
 
